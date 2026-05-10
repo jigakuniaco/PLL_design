@@ -13,8 +13,8 @@ ypos2=2
 divy=5
 subdivy=1
 unity=1
-x1=1.3734487e-05
-x2=1.8238086e-05
+x1=1.3509307e-05
+x2=1.8012906e-05
 divx=5
 subdivx=1
 xlabmag=1.0
@@ -64,4 +64,4 @@ C {dac_bridge.sym} 270 -30 0 0 {name=A2 dac_bridge_model= dac_buff
 device_model=".model dac_buff dac_bridge input_load=1e-15 t_rise=10n t_fall=10n
 + out_low=0 out_high=3.3"
 }
-C {/home/jh012/open_source_circuit_design/pll_gf180_custom/sch/sym/v_freq_divider.sym} 80 10 0 0 {name=A1 model=freq_divider}
+C {../sym/v_freq_divider.sym} 80 10 0 0 {name=A1 model=freq_divider}
