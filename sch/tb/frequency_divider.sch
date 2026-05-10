@@ -31,18 +31,6 @@ N -350 40 -350 60 {lab=VCC}
 N -350 170 -350 190 {lab=CLK}
 N 300 -30 305 -30 {lab=DIV_CLK}
 N -95 -30 -80 -30 {lab=CLK}
-C {v_freq_divider.sym} 80 10 0 0 {name=xDUT model=dut
-
-***Icarus_verilog***
-device_model=".model dut d_cosim simulation=\\"ivlng\\" sim_args=[\\"freq_divider\\"] 
-+ vlow=0.8 vhigh=2.0 
-+ v0=0 v1=3.3 
-+ rise=1n fall=1n"
-
-***Verilator***
-*device_model=".model dut d_cosim simulation=\\"./adc.so\\""
-
-tclcommand="edit_file ./freq_divider.v"}
 C {lab_pin.sym} -95 -30 0 0 {name=p1 lab=CLK}
 C {vsource.sym} -350 90 0 0 {name=VVCC value='VCC' savecurrent=false}
 C {lab_pin.sym} -350 120 0 0 {name=p2 lab=0}
@@ -62,7 +50,7 @@ C {code_shown.sym} -30 160 0 0 {name=COMMANDS only_toplevel=false value="
 "}
 C {launcher.sym} 510 220 0 0 {name=h1
 descr="Build Icarus Verilog object" 
-tclcommand="execute 1 sh -c \\"cd $netlist_dir; iverilog -o freq_divider [abs_sym_path freq_divider.v]\\""
+tclcommand="execute 1 sh -c \\"cd $netlist_dir; iverilog -o freq_divider [abs_sym_path ../design/verilog/freq_divider.v]\\""
 }
 C {vsource.sym} -350 220 0 0 {name=VCLOCK value="pulse 0 'VCC' 500n 10n 10n 490n 1u"}
 C {lab_pin.sym} -350 250 0 0 {name=p6 lab=0}
@@ -76,3 +64,4 @@ C {dac_bridge.sym} 270 -30 0 0 {name=A2 dac_bridge_model= dac_buff
 device_model=".model dac_buff dac_bridge input_load=1e-15 t_rise=10n t_fall=10n
 + out_low=0 out_high=3.3"
 }
+C {/home/jh012/open_source_circuit_design/pll_gf180_custom/sch/sym/v_freq_divider.sym} 80 10 0 0 {name=A1 model=freq_divider}
